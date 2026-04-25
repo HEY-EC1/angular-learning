@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>社員一覧</h2>
+
+  <table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>社員ID</th>
+        <th>氏名</th>
+        <th>部署名</th>
+        <th>メール</th>
+        <th>役職</th>
+        <th>状況</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let shain of shainList">
+        <td>{{ shain.id }}</td>
+        <td>{{ shain.name }}</td>
+        <td>{{ shain.department }}</td>
+        <td>{{ shain.email }}</td>
+        <td>-</td>
+        <td>-</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

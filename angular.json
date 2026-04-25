@@ -9,15 +9,23 @@
   "projects": {
     "angular-learning": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "type": "component",
+          "style": "css"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        }
+      },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src/web",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
+            "browser": "src/web/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -26,7 +34,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/web/styles.css"
             ]
           },
           "configurations": {

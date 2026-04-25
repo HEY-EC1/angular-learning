@@ -1,5 +1,4 @@
 services:
-  # データベース (PostgreSQLの例)
   db:
     image: postgres:15
     container_name: shain-db
@@ -10,4 +9,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: shain_db
     volumes:
-      - ./docker/db/data:/var/lib/postgresql/data # データをPC内に保存する設定
+      # Mac側の ./docker/db/data フォルダにデータを保存
+      - ./docker/db/data:/var/lib/postgresql/data
+      # Mac側の ./docker/db/init フォルダにあるSQLを起動時に実行
+      - ./docker/db/init:/docker-entrypoint-initdb.d

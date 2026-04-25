@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "ShainApiApplication",
+      "request": "launch",
+      "mainClass": "com.example.shain.ShainApiApplication",
+      "projectName": "angular-learning_10186ff4"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
