@@ -1,0 +1,13 @@
+services:
+  # データベース (PostgreSQLの例)
+  db:
+    image: postgres:15
+    container_name: shain-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shain_db
+    volumes:
+      - ./docker/db/data:/var/lib/postgresql/data # データをPC内に保存する設定
