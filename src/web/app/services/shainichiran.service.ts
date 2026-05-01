@@ -16,4 +16,14 @@ export class ShainichiranService {
     // HttpClientを使ってJavaのAPIを叩く！
     return this.http.get<Shainichiran[]>(this.apiUrl);
   }
+
+  addShain(shain: Shainichiran): Observable<Shainichiran> {
+  // 指定したURLに「POST」でデータを送る
+  return this.http.post<Shainichiran>(this.apiUrl, shain);
+  }
+
+  deleteShain(id: number): Observable<void> {
+  // 指定したURLに「DELETE」でデータを送る
+  return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

@@ -9,18 +9,32 @@
         <th>部署名</th>
         <th>メール</th>
         <th>役職</th>
+        <th>操作</th>
         <th>状況</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let shain of shainList">
-        <td>{{ shain.id }}</td>
-        <td>{{ shain.name }}</td>
-        <td>{{ shain.department }}</td>
-        <td>{{ shain.email }}</td>
-        <td>-</td>
-        <td>-</td>
-        </tr>
-    </tbody>
+<tbody>
+  @for (shain of shainList(); track shain.id) {
+    <tr>
+      <td>{{ shain.id }}</td>
+      <td>{{ shain.name }}</td>
+      <td>{{ shain.department }}</td>
+      <td>{{ shain.email }}</td>
+      <td>-</td>
+      <td>
+        <button (click)="onDelete(shain.id)">削除</button>
+      </td>
+    </tr>
+  }
+</tbody>
   </table>
 </div>
+
+<div class="registration-form">
+  <h3>新規登録</h3>
+  <input [(ngModel)]="newShain.name" placeholder="氏名">
+  <input [(ngModel)]="newShain.department" placeholder="部署">
+  <input [(ngModel)]="newShain.email" placeholder="メール">
+  <button (click)="onRegister()">登録</button>
+</div>
+<hr>
